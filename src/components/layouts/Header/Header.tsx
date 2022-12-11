@@ -1,6 +1,8 @@
 import { NavLink, To } from 'react-router-dom';
 import logo from 'assets/images/logo.png';
 import './style.css';
+import { urls } from 'config';
+import { useUserContext } from 'components/UserContext';
 
 interface HeaderLink {
   children: string,
@@ -9,17 +11,20 @@ interface HeaderLink {
 
 const navLinks: HeaderLink[] = [
   {
-    to: '/',
+    to: urls.liveCasinoGames,
     children: 'Live Casino Games'
   },
   {
-    to: '/slot-games',
+    to: urls.slotGames,
     children: 'Slot Games'
   }
 ]
 
 
 const Header = () => {
+
+  const {balance} = useUserContext()
+
   return (
     <div className="header">
       <div className='container header-content'>
@@ -38,7 +43,7 @@ const Header = () => {
             FETask, 
           </span>
           <span className="header__balance-balance">
-            $123s
+            ${balance}
           </span>
         </div>
       </div>

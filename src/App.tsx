@@ -1,8 +1,11 @@
+import { UserContextProvider } from "components/UserContext";
 import Routes from "./routes";
 
 const App = () => {
   return (
-    <Routes />
+    <UserContextProvider>
+      <Routes />
+    </UserContextProvider>
   )
 }
 

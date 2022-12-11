@@ -9,7 +9,7 @@ interface TitleRowProps {
 const TitleRow = ({title, contentRight}: TitleRowProps) => {
   return (
       <div className='title-row'>
-          <div className="container">
+          <div className="container title-row__content">
               
           <h3 className='title-row__title'>
               {title}

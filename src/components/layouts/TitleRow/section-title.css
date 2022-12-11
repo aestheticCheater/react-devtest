@@ -1,10 +1,15 @@
 
 .title-row {
     background-color: var(--bg-header);
-    display: flex;
-    align-self: center;
-    justify-content: space-between;
     padding: 10px 0;
+    border-top: 5px solid var(--color-purple);
+    border-bottom: 5px solid var(--color-purple);
+}
+
+.title-row__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
 }
 
 .title-row__title {

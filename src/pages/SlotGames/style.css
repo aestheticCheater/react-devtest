@@ -1,0 +1,25 @@
+.filter-button {
+    padding: 10px 20px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #EF2896;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.filter-button--active {
+    background-color: #FB299D;
+}
+
+.filter-button__icon {
+    font-size: 8px;
+    transform: scale(2, 1);
+    transition: rotate 0.5s;
+    rotate: 180deg;
+}
+
+.filter-button--active .filter-button__icon {
+    rotate: 0deg;
+}
