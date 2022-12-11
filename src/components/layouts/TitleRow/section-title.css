@@ -1,0 +1,14 @@
+
+.title-row {
+    background-color: var(--bg-header);
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.title-row__title {
+    color: var(--color-white);
+    font-family:var(--font-base);
+    font-size: 20px;
+}

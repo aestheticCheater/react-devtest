@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2);
+
+
+
+.container {
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --font-base: 'Exo 2';
+    
+    --bg-color: #201531;
+    --bg-header:#17141f;
+    
+    --color-golden: #E1AF07;
+    --color-white: #FFFFFF;
+  }
+
+a {
+    text-decoration: none;
+}
