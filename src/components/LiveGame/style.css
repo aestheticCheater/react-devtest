@@ -1,0 +1,34 @@
+.live-game-card {
+    border: 1px solid transparent;
+    border-image: linear-gradient(to bottom, #FFD700 25%,  #FFA500 25%, #FF0000 75%);
+    border-image-slice: 1;
+    color: var(--color-white);
+    width: 100%;
+}
+
+.live-game-card__image {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.live-game-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #171225;
+}
+
+.live-game-card__players {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #817BD8;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.live-game-card__players-separator {
+    font-size: 20px;
+}

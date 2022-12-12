@@ -1,33 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import FeaturedGames from 'components/layouts/FeaturedGamesContainer/FeaturedGames';
 import TitleRow from 'components/layouts/TitleRow';
 import './style.css';
 import { Filter } from 'components';
-import api, { ResponseType } from 'api';
-import { useUserContext } from 'components/UserContext';
-import { operatorToken } from 'config';
 
-interface Game {
-
-}
 
 const SlotGames = () => {
 
-  const [isOpen, setOpen] = useState(false)
-  const [state, setState] = useState<ResponseType<Game> | null>(null)
-  const {currency} = useUserContext()
-
-  useEffect(() => {
-    api.get<ResponseType<Game[]>>('api/lobby/games', {
-      params: {
-          currency,
-          operatorToken,
-          type: 'any'
-      }
-    }).then((response) => {
-      setState(response.data)
-    })
-  })
+  const [isOpen, setOpen] = useState(false);
 
   const toggleFilter = () => {
     setOpen(oldOpen => !oldOpen)

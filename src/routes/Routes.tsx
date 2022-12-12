@@ -1,7 +1,7 @@
-import { Main } from "components/layouts"
-import { urls } from "config"
-import { LiveCasinoGames, SlotGames } from "pages"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Main } from "components/layouts";
+import { urls } from "config";
+import { LiveCasinoGames, SlotGames } from "pages";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Router = () => {  
 
@@ -15,4 +15,4 @@ const Router = () => {
   )
 }
 
-export default Router
+export default Router;
