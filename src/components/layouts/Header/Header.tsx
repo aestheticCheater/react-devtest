@@ -23,7 +23,7 @@ const navLinks: HeaderLink[] = [
 
 const Header = () => {
 
-  const {balance} = useUserContext()
+  const { balance, username } = useUserContext();
 
   return (
     <div className="header">
@@ -40,7 +40,7 @@ const Header = () => {
         </div>
         <div className='header__balance'>
           <span className="header__balance-text">
-            FETask, 
+          ${username}, 
           </span>
           <span className="header__balance-balance">
             ${balance}

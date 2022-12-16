@@ -5,7 +5,13 @@
     
     --bg-color: #201531;
     --bg-header:#17141f;
-    
+
+    --color-filter-button-active: #FB299D;
+    --color-filter-button:#EF2896;
+    --color-card-footer:#171225;
+    --color-card-footer-content:#817BD8;
+    --color-slots-line-row:yellow;
+    --color-slots-tag-row:green;
     --color-golden: #E1AF07;
     --color-white: #FFFFFF;
     --color-purple: #291E3B;
@@ -28,16 +34,25 @@ a {
     box-sizing: border-box;
 }
 
-html {
+body {
     font-family: "Exo 2";
 }
 
+
 .row {
-    display: flex;
+    display: grid;
     gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-.col {
-    flex: 0 0 25%;
-    max-width: 25%;
+
+@media all and (max-width: 800px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+div[role="tooltip"] {
+    z-index: 10;
 }

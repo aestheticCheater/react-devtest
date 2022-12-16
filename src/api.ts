@@ -6,9 +6,3 @@ const api = axios.create({
 });
   
 export default api;
-
-export interface ResponseType<Data = any> {
-    data: Data,
-    errorMsg: string | null,
-    successfull: boolean
-}

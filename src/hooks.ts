@@ -1,27 +1,45 @@
-import api from 'api';
-import { AxiosRequestConfig } from 'axios';
-import { refetchTime } from 'config';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react'
+import { useUserContext } from 'components/UserContext';
+import api from 'api'
+import { AxiosRequestConfig } from 'axios'
+import { operatorToken, refetchTime } from 'config'
+import { Game } from 'models';
 
-export const useGet = <Data = any>(url: string, config?: AxiosRequestConfig) => {
+export const useGet = <Data>(url: string, config?: AxiosRequestConfig) => {
 
-    const [state, setState] = useState<Data | null>(null);
+    const [state, setState] = useState<Data | null>(null)
 
     useEffect(() => {
-        let timeout: NodeJS.Timeout;
+        let timeout: NodeJS.Timeout
         const fetch = () => {
             api.get<Data>(url, config).then((response) => {
-                setState(response.data);
-                timeout = setTimeout(fetch, refetchTime);
+                setState(response.data)
+                timeout = setTimeout(fetch, refetchTime)
             })
         }
-
         fetch()
 
         return () => {
-            clearTimeout(timeout);
+            clearTimeout(timeout)
         }
     }, [])
 
-    return state;
+    return state
+}
+
+
+export const useGetGames = (
+    type: 'any' | 'live' | 'slots'
+) => {
+
+    const {currency} = useUserContext()
+
+    const data = useGet<Game[]>('api/lobby/games', {
+        params: {
+            operatorToken: operatorToken,
+            currency,
+            type
+        }
+    })
+    return data
 }
